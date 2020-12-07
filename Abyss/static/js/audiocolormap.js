@@ -1,0 +1,17 @@
+const AUDIO_FEATURES = {
+    "Red": "min_danceability=0.4&min_energy=0.3&min_valence=0.7",
+    "Red-Orange": "min_danceability=0.5&min_energy=0.5&min_valence=0.5",
+    "Brown": "max_danceability=0.4&max_energy=0.4&target_valence=0.5",
+    "Yellow-Orange": "min_danceability=0.4&min_energy=0.4&min_valence=0.5",
+    "Yellow": "min_danceability=0.8&min_energy=0.7&min_valence=0.8",
+    "Yellow-Green": "min_danceability=0.7&min_energy=0.65&target_valence=0.6",
+    "Green": "max_danceability=0.4&target_energy=0.3&target_valence=0.5",
+    "Cyan": "max_danceability=0.3&target_energy=0.3&target_valence=0.5",
+    "Sky-Blue": "max_danceability=0.5&max_energy=0.5&max_valence=0.6",
+    "Blue": "max_danceability=0.4&max_energy=0.4&max_valence=0.5",
+    "Indigo": "max_danceability=0.3&max_energy=0.3&max_valence=0.5",
+    "Magenta": "max_danceability=0.5&max_energy=0.5&max_valence=0.6",
+    "Hot-Pink": "min_danceability=0.7&min_energy=0.7&min_valence=0.7",
+    "Deep-Pink": "min_danceability=0.7&min_energy=0.75&min_valence=0.8",
+    "Scarlet": "min_danceability=0.9&min_energy=0.7&min_valence=0.8",
+}

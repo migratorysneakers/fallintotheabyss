@@ -1,0 +1,58 @@
+
+@font-face {
+    font-family: SFMono;
+    src: url('../fonts/SFMonoRegular.otf');
+}
+body, button {
+    background-color: black;
+    font-family: SFMono;
+    color: white;
+}
+.choices-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.choices-container input.file-path.validate {
+    color: white;
+    font-family: SFMono;
+}
+.choices-container input.file-path.valid {
+    border-bottom: 1px solid #00796b;
+    box-shadow: none;
+}
+.choices-container .choice-text-or {
+    text-align: center;
+    font-size: 2.0rem;
+    display: inline-block;
+}
+.choices-container .choice-text {
+    color: #00796b;
+    display: inline-block;
+}
+.choices-container .color-choices {
+    text-align: center;
+    font-size: 2.5rem;
+}
+.choices-container .btn-submit-container {
+    text-align: center;
+}
+.choices-container #btn-submit-image {
+    padding: 10px;
+    background-color: #00796b;
+    border: 1px solid #00796b;
+    text-transform: none;
+    font-size: 1.6rem;
+    height: initial;
+}
+.choices-container #clear-file-input {
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #00796b;
+    text-transform: none;
+    height: initial;
+}
+.choices-container .color-container-square {
+    height: 200px;
+}

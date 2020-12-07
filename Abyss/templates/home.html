@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Abyss</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" href="static/css/colors.css">
+    <link rel="stylesheet" href="static/css/home.css">
+
+    <script src="static/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="static/js/materialize.min.js"></script>
+
+    <script src="static/js/colortable.js"></script>
+    <script src="static/js/audiocolormap.js"></script>
+    <script src="static/js/home.js"></script>
+</head>
+<body class="background">
+    <div class="choices-container container">
+        <div class="row">
+            <div class="col s6 offset-s3">
+                <div class="color-choices">
+                    <span>What</span>
+                    <span class="choice-text">color</span>
+                    <span>are you feeling today?</span>
+                </div>
+                <div class="color-choice-carousel carousel">
+                    <a class="carousel-item" href="#Red">
+                        <div class="color-container-square color-choice-red"></div>
+                    </a>
+                    <a class="carousel-item" href="#Red-Orange">
+                        <div class="color-container-square color-choice-redorange"></div>
+                    </a>
+                    <a class="carousel-item" href="#Brown">
+                        <div class="color-container-square color-choice-brown"></div>
+                    </a>
+                    <a class="carousel-item" href="#Yellow-Orange">
+                        <div class="color-container-square color-choice-yelloworange"></div>
+                    </a>
+                    <a class="carousel-item" href="#Yellow">
+                        <div class="color-container-square color-choice-yellow"></div>
+                    </a>
+                    <a class="carousel-item" href="#Yellow-Green">
+                        <div class="color-container-square color-choice-yellowgreen"></div>
+                    </a>
+                    <a class="carousel-item" href="#Green">
+                        <div class="color-container-square color-choice-green"></div>
+                    </a>
+                    <a class="carousel-item" href="#Cyan">
+                        <div class="color-container-square color-choice-cyan"></div>
+                    </a>
+                    <a class="carousel-item" href="#Sky-Blue">
+                        <div class="color-container-square color-choice-skyblue"></div>
+                    </a>
+                    <a class="carousel-item" href="#Blue">
+                        <div class="color-container-square color-choice-blue"></div>
+                    </a>
+                    <a class="carousel-item" href="#Indigo">
+                        <div class="color-container-square color-choice-indigo"></div>
+                    </a>
+                    <a class="carousel-item" href="#Magenta">
+                        <div class="color-container-square color-choice-magenta"></div>
+                    </a>
+                    <a class="carousel-item" href="#Hot-Pink">
+                        <div class="color-container-square color-choice-hotpink"></div>
+                    </a>
+                    <a class="carousel-item" href="#Deep-Pink">
+                        <div class="color-container-square color-choice-deeppink"></div>
+                    </a>
+                    <a class="carousel-item" href="#Scarlet">
+                        <div class="color-container-square color-choice-scarlet"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6 offset-s3 choice-text-or">
+                <span>Or do you want to hear your</span>
+                <span class="choice-text">pictures</span>
+                <span>sing?</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s7 offset-s2">
+                <form id="form-user-image" method="post" enctype="multipart/form-data">
+                    <div class="file-field input-field">
+                        <input id="form-user-file" type="file" accept="image/*">
+                        <div class="file-path-wrapper">
+                            <input id="form-user-filename" class="file-path validate" type="text" placeholder="Upload an image (.jpg/.png)">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col s3">
+                <button id="clear-file-input" type="button" class="btn">Clear</button>
+            </div>
+        </div>
+        <div class="row btn-submit-container">
+            <div class="col s6 offset-s3">
+                <button id="btn-submit-image" type="button" class="btn">Find Me Songs</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

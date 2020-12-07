@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Abyss | Your Playlist</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" href="static/css/tracklist.css">
+    <link rel="stylesheet" href="static/css/colors.css">
+
+    <script src="static/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="static/js/materialize.min.js"></script>
+</head>
+<body>
+    <div class="tracklist-container container">
+        <div class="row">
+            <div class="col s6 offset-s3">
+                <div class="tracklist-title border-bottom-color-choice-{{color}}">Your Abyss</div>
+                <div class="tracklist-carousel carousel">
+                    {% for track in result.tracks %}
+                        <a class="carousel-item" href="{{ track.external_urls.spotify }}" target="_blank">
+                            <img src="{{ track.album.images[0].url }}">
+                            <span>{{ track.name }} - {{ track.artists[0].name }}</span>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row btn-tracklist-container">
+            <div class="col s6 offset-s3">
+                <button id="btn-save-playlist" class="btn color-choice-{{color}}" type="button">Save Playlist</button>
+                <button id="btn-reset-search" class="btn color-choice-{{color}}" type="button">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script></script>
+</body>
+</html>
