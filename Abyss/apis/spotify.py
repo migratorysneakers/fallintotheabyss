@@ -12,6 +12,7 @@ class SpotifyAPI(object):
     client_id = None
     client_secret = None
     user_top_genres = None
+    user_id = None
 
     def __init__(self):
         self.client_id = sensitive.CLIENT_ID
@@ -22,7 +23,7 @@ class SpotifyAPI(object):
              secrets.choice(string.ascii_uppercase + string.digits) for _ in range(16)
          )
 
-         scope = "user-top-read user-library-read"
+         scope = "user-top-read user-library-read playlist-modify-public playlist-modify-private user-read-private user-read-email"
          payload = {
              'client_id': self.client_id,
              'response_type': 'code',
@@ -48,6 +49,26 @@ class SpotifyAPI(object):
 
          return response
 
+    def refresh_token(self, refresh_token):
+        payload = {
+            'grant_type': 'refresh_token',
+            'refresh_token': refresh_token
+        }
+
+        headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+        result = requests.post(urlist.TOKEN_URL, auth=(self.client_id, self.client_secret), data=payload, headers=headers)
+        return result.json()
+
+    def get_user_id(self, code):
+        headers = { 'Authorization': f'Bearer {code}' }
+        endpoint = f'{urlist.USER_URL}'
+        response = request.get(endpoint, headers=headers).json()
+
+        if response.get('error') is not None and response.get('error').get('status') == 401:
+            return response
+
+        self.user_id = request.get(endpoint, headers=headers).json().get('id')
+
     def get_top_genres(self, code):
         headers = { 'Authorization': f'Bearer {code}' }
         params = {
@@ -56,7 +77,12 @@ class SpotifyAPI(object):
         }
 
         endpoint = f'{urlist.TOP_ARTISTS}/?{urlencode(params)}'
-        artists = requests.get(endpoint, headers=headers).json().get('items')
+        artists = requests.get(endpoint, headers=headers).json()
+
+        if artists.get('error') is not None and artists.get('error').get('status') == 401:
+            return artists
+
+        artists = artists.get('items')
         genres = []
 
         for artist in artists:
@@ -84,4 +110,8 @@ class SpotifyAPI(object):
 
         endpoint = f'{urlist.RELATED_TRACKS}?{urlencode(params)}&{audio_features}'
         tracks = requests.get(endpoint, headers=headers).json()
+
+        if tracks.get('error') is not None and artists.get('error').get('status') == 401:
+            return tracks
+
         return tracks

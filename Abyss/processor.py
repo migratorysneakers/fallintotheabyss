@@ -36,6 +36,9 @@ def index():
     else:
         return render_template('login.html')
 
+@processor.route('/reset', methods=['GET'])
+def try_again():
+    return redirect('/')
 
 # Spotify routes
 @processor.route('/login', methods=['GET'])
@@ -67,10 +70,19 @@ def get_songs():
         color = request.form['color']
         audio_features = request.form['audioFeatures']
         code = session['tokens'].get('access_token')
-        refresh = session['tokens'].get('refresh_token')
+        refresh_token = session['tokens'].get('refresh_token')
 
         songs = spotify_api.get_related_tracks(code, audio_features)
-        #pdb.set_trace()
+
+        if songs.get('error') is not None:
+            tokens = spotify_api.refresh_token(refresh_token)
+            session['tokens'] = {
+                'access_token': response_data.get('access_token'),
+                'refresh_token': response_data.get('refresh_token')
+            }
+
+            code = session['tokens'].get('access_token')
+            songs = spotify_api.get_related_tracks(code, audio_features)
 
         return render_template('tracklist.html', result=songs, color=color)
 

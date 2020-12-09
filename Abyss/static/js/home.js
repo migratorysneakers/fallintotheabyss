@@ -22,10 +22,9 @@ $(function () {
     });
 
     $('#btn-submit-image').click(function () {
-        let fileInput = $('#form-user-image');
-
+        let fileInput = $('#form-user-file');
         if (fileInput.val() !== '') {
-            var form_data = new FormData(fileInput[0]);
+            var form_data = new FormData($('#form-user-image')[0]);
             $.ajax({
                 type: 'POST',
                 url: '/getColor',

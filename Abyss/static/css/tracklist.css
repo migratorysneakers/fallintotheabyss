@@ -16,3 +16,17 @@ body {
 .btn-tracklist-container {
     text-align: center;
 }
+.abyss-circle {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.tracklist-btns {
+    background-color: transparent;
+    text-transform: none;
+    font-family: SFMono;
+}
+.tracklist-btns:hover {
+    background-color: none !important;
+}
