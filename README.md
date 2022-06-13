@@ -3,6 +3,8 @@
 
 **Abyss** lets you discover songs based on the color you picked or the dominant color detected in an image. OpenCV is used for image processing, specifically [K-means clutering for determining the dominant color](https://www.pyimagesearch.com/2014/05/26/opencv-python-k-means-color-clustering/). Spotify Web API is used for personalizing the user's song exploration.
 
+**UPDATE APRIL 2021:** I [revamped](https://github.com/migratorysneakers/fallintotheabyssagain) this project!
+
 
 ![Abyss Results Page](/Abyss_Demo/result_page.PNG)
 
